@@ -1,20 +1,26 @@
+//problem_link:https://codeforces.com/problemset/problem/236/A
+
 #include<bits/stdc++.h>
 
 using namespace std;
 
 int main()
 {
-    int n,k,a[10000];
-    cin>>n>>k;
-    for(int i=0;i<n;i++){
-        cin>>a[i];
-    }
-    int ans=0;
-    for(int i=0;i<n;i++){
-        if(a[i]>=a[k-1] && a[k]>0){
-            ans++;
+    string str;
+    cin>>str;
+    bool is_girl=true;
+    for(int i=0;i<str.size();i++){
+        int distinct_numbers=str[i]-'0';
+        if(distinct_numbers%2!=0){
+            is_girl=false;
+            break;
         }
     }
-    cout<<ans<<endl;
+    if(is_girl){
+        cout<<"CHAT WITH HER!"<<endl;
+    }
+    else{
+        cout<<"IGNORE HIM!"<<endl;
+    }
     return 0;
 }
