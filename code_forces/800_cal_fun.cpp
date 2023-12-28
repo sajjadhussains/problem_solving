@@ -6,16 +6,14 @@ using namespace std;
 
 int main()
 {
-    int n;
+    long long n;
     cin>>n;
-
-    int sum=0;
-    for(int i=1;i<=n;i=i+2){
-        sum+=-i;
-        if(i!=n){
-            sum+=i+1;
-        }
+    if(n%2==0){
+        cout<<n/2<<endl;
     }
-    cout<<sum<<endl;
+    else{
+        cout<<"-"<<(n+1)/2<<endl;
+    }
+    
     return 0;
 }
