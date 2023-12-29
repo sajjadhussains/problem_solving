@@ -1,4 +1,4 @@
-//p_link:https://codeforces.com/problemset/problem/486/A
+//p_link:
 
 #include<bits/stdc++.h>
 
@@ -6,16 +6,26 @@ using namespace std;
 
 int main()
 {
-    int n;
-    cin>>n;
-
-    int sum=0;
-    for(int i=1;i<=n;i=i+2){
-        sum+=-i;
-        if(i!=n){
-            sum+=i+1;
-        }
+    long long n,k;
+    cin>>n>>k;
+    long long arr[n];
+    long long s;
+    if(n%2==0){
+        s=n/2;
     }
-    cout<<sum<<endl;
+    else{
+        s=(n/2)+1;
+    }
+    long long odd=1;
+    for(int i=1;i<=s;i++){
+        arr[i]=odd;
+        odd=odd+2;
+    }
+    long long even=2;
+    for(int i=s+1;i<=n;i++){
+        arr[i]=even;
+        even=even+2;
+    }
+    cout<<arr[k]<<endl;
     return 0;
 }
