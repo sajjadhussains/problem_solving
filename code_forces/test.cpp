@@ -1,31 +1,25 @@
 #include <iostream>
-#include <string>
-
-using namespace std;
+#include <vector>
 
 int main() {
-    string str, str_out;
-    cin >> str;
+    std::vector<char> elements;
 
-    int i = 0;
-    while (i < str.size()) {
-        if (i + 2 < str.size() && str[i] == 'W' && str[i + 1] == 'U' && str[i + 2] == 'B') {
-            i += 3;  // Skip "WUB"
-        } else {
-            while (i < str.size() && !(i + 2 < str.size() && str[i] == 'W' && str[i + 1] == 'U' && str[i + 2] == 'B')) {
-                str_out += str[i];
-                i++;
-            }
-            str_out += ' ';  // Add space after each word
+    char userInput;
+    do {
+        std::cout << "Enter an element (or 'q' to quit): ";
+        std::cin >> userInput;
+
+        if (userInput != 'q') {
+            elements.push_back(userInput);
         }
-    }
+    } while (userInput != 'q');
 
-    // Remove trailing space
-    if (!str_out.empty() && str_out.back() == ' ') {
-        str_out.pop_back();
+    // Print the entered elements
+    std::cout << "Entered Elements: ";
+    for (char element : elements) {
+        std::cout << element << ' ';
     }
-
-    cout << str_out << endl;
+    std::cout << std::endl;
 
     return 0;
 }

@@ -28,11 +28,11 @@ int main()
                     if(j==0){
                         cout<<"#";
                     }
-                    else if(j==m){
-                        t++;
-                    }
                     else{
                         cout<<".";
+                    }
+                    if(j==m-1){
+                        t++;
                     }
                 }
 
