@@ -20,7 +20,6 @@ int main()
             i++;
         }
         cout<<i-1<<endl;
-        return 0;
     }
 
     return 0;
