@@ -1,25 +1,32 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
+
+using namespace std;
 
 int main() {
-    std::vector<char> elements;
+    int n;
+    cin >> n;
+    
+    vector<pair<int, int>> arr(n);
 
-    char userInput;
-    do {
-        std::cout << "Enter an element (or 'q' to quit): ";
-        std::cin >> userInput;
-
-        if (userInput != 'q') {
-            elements.push_back(userInput);
-        }
-    } while (userInput != 'q');
-
-    // Print the entered elements
-    std::cout << "Entered Elements: ";
-    for (char element : elements) {
-        std::cout << element << ' ';
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i].first;
+        arr[i].second = i; // Store the original index along with the value
     }
-    std::cout << std::endl;
 
+    sort(arr.begin(), arr.end(), greater<pair<int, int>>()); // Sort in descending order
+
+    int s = 0, d = 0;
+
+    for (int i = 0; i < n; i++) {
+        if (i % 2 == 0) {
+            s += arr[i].first;
+        } else {
+            d += arr[i].first;
+        }
+    }
+
+    cout << s << " " << d << endl;
     return 0;
 }
