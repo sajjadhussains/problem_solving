@@ -9,9 +9,15 @@ int main()
     int t;
     cin>>t;
     while(t--){
-        int a,b;
+        long long int a,b;
         cin>>a>>b;
-        int diff=abs(a-b);
-        cout<<
+        long long diff=abs(a-b);
+        if(diff%10==0){
+            cout<<diff/10<<endl;
+        }
+        else{
+            cout<<diff/10+1<<endl;
+        }
     }
+    return 0;
 }
