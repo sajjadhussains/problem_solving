@@ -12,16 +12,25 @@ int main() {
         cin >> n;
         string s;
         cin>>s;
-        int ans=0;
+        int plus=0;
+        int minus=0;
         for(int i=0;i<n;i++){
             if(s[i]=='-'){
-                ans+=-1;
+                minus+=-1;
             }
             else{
-                ans+=1;
+                plus+=1;
             }
         }
-        cout<<ans<<endl;
+        if(minus>plus){
+            cout<<minus-plus<<endl;
+        }
+        else if(minus<plus){
+            cout<<plus-minus<<endl;
+        }
+        else{
+            cout<<0<<endl;
+        }
     }
 
     return 0;
