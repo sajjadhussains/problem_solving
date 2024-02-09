@@ -13,10 +13,10 @@ int main()
         cin>>n;
         string a,b,c;
         cin>>a>>b>>c;
-        bool is_true=true;
+        bool is_true=false;
         for(int i=0;i<n;i++){
-            if(a[i]==c[i] || b[i]==c[i]){
-                is_true=false;
+            if(a[i]!=c[i] && b[i]!=c[i]){
+                is_true=true;
                 break;
             }
         }
