@@ -10,27 +10,29 @@ int main()
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
-    int m=0;
-    int count;
-    if(n%k==0){
-        count=n/k;
-    }
-    else{
-        count=n/k+1;
-    }
-    int g=0;
-    while(g<count){
+    int first=n/k;
+    int m=1;
+    int j=0;
+    while(m<=first){
         long long minimum=1e10;
-        for(int i=m;i<k;i++){
+        for(j;j<k*m;j++){
+            if(minimum>arr[j]){
+                minimum=arr[j];
+            }
+        }
+        cout<<minimum<<" ";
+        m++;
+        // j+=k;
+    }
+    m--;
+    if(n%k!=0){
+        long long minimum=1e10;
+        for(int i=m*k;i<n;i++){
             if(minimum>arr[i]){
                 minimum=arr[i];
             }
         }
-        cout<<minimum<<" ";
-        m+=k;
-        k+=k;
-        g++;
+        cout<<minimum<<endl;
     }
-    cout<<endl;
     return 0;
 }
