@@ -6,12 +6,6 @@ int main()
 {
     char ch;
     cin>>ch;
-    if(ch=='?'){
-        cout<<"?"<<endl;
-    }
-    else{
-        cout<<"NO"<<endl;
-    }
-
+    cout<<ch<<endl;
     return 0;
 }
