@@ -4,11 +4,18 @@ using namespace std;
 
 int main()
 {
-    int n,t;
+    long long n,t;
     cin>>n>>t;
-    int arr[n];
+    long long arr1[n];
+    long long arr2[n];
     for(int i=0;i<n;i++){
-        cin>>arr[i];
+        cin>>arr1[i];
+        if(i==0){
+            arr2[i]=arr1[i];
+        }
+        else{
+            arr2[i]=arr1[i]+arr2[i-1];
+        }
     }
     while (t--)     
     {
@@ -16,10 +23,7 @@ int main()
         cin>>q>>r;
         q=q-1;
         r=r-1;
-        long long int sum=0;
-        for(int i=q;i<=r;i++){
-            sum+=arr[i];
-        }
+        long long sum=arr2[r]-arr2[q]+arr1[q];
         cout<<sum<<endl;
     }
     return 0;
