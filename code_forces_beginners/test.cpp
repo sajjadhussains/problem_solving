@@ -4,8 +4,8 @@ using namespace std;
 
 int main()
 {
-    cout<<7%100<<endl;
     
+    cout<<int('s')<<endl;
 
     return 0;
 }
